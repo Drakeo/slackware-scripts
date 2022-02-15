@@ -41,8 +41,7 @@ elif [ "$SLKVER" = "Slackware 14.2" ]; then
  # SLKUSYS="15.0" #uncomment and and remove below when 15.0 is released.
   SLKUSYS="current"
 elif [ "$SLKVER" = "Slackware 15.0" ]; then
- # SLKUSYS="15.0" #uncomment and and remove below when 15.0 is released.
-  SLKUSYS="current"
+  SLKUSYS="15.0"
 else
   SLKUSYS="current"
 fi
