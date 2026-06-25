@@ -54,7 +54,6 @@ read prgname
 echo -e "\e[1;34m It's ok lets find the program name it is in \e[0m"
 sleep 2
 PROGNM=$prgname
-
 ALP=$(cat modules/all-packaged-applications | grep $PROGNM)
 APP=$(cat modules/applications | grep $PROGNM)
 APX=$(cat modules/applications-extra | grep $PROGNM)
@@ -65,9 +64,9 @@ PIM=$(cat modules/kdepim | grep $PROGNM)
 PLM=$(cat modules/plasma | grep $PROGNM)
 PLX=$(cat modules/plasma-extra | grep $PROGNM)
 TEL=$(cat modules/telepathy | grep $PROGNM)
-
 if [ "$ALP" = "$PROGNM" ]; then
 MODULE=all-packaged-applications
+fi
 if [ "$APP" = "$PROGNM" ]; then
 MODULE=applications
 fi
