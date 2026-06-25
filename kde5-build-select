@@ -59,6 +59,7 @@ ALP=$(cat modules/all-packaged-applications | grep $PROGNM)
 APP=$(cat modules/applications | grep $PROGNM)
 APX=$(cat modules/applications-extra | grep $PROGNM)
 FRM=$(cat modules/frameworks | grep $PROGNM)
+KD4=$(cat modules/kde4 | grep $PROGNM)
 KD5=$(cat modules/kde5 | grep $PROGNM)
 PIM=$(cat modules/kdepim | grep $PROGNM)
 PLM=$(cat modules/plasma | grep $PROGNM)
@@ -74,6 +75,9 @@ MODULE=applications-extra
 fi
 if [ "$FRM" = "$PROGNM" ]; then
 MODULE=frameworks
+fi
+if [ "$KD4" = "$PROGNM" ]; then
+MODULE=kde4
 fi
 if [ "$KD5" = "$PROGNM" ]; then
 MODULE=kde5
