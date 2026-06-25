@@ -91,7 +91,7 @@ fi
 if [ "$PLX" = "$PROGNM" ]; then
 MODULE=plasma-extra
 fi
-echo put your proot password in to build and install
+echo put your root password in to build and install
 su -c "./kde.SlackBuild $MODULE:$PROGNM"
 
 function pause(){
