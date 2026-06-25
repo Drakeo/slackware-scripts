@@ -64,6 +64,7 @@ KD5=$(cat modules/kde5 | grep $PROGNM)
 PIM=$(cat modules/kdepim | grep $PROGNM)
 PLM=$(cat modules/plasma | grep $PROGNM)
 PLX=$(cat modules/plasma-extra | grep $PROGNM)
+TEL=$(cat modules/telepathy | grep $PROGNM)
 
 if [ "$ALP" = "$PROGNM" ]; then
 MODULE=all-packaged-applications
@@ -90,6 +91,9 @@ MODULE=plasma
 fi
 if [ "$PLX" = "$PROGNM" ]; then
 MODULE=plasma-extra
+fi
+if [ "$TEL" = "$PROGNM" ]; then
+MODULE=telepathy
 fi
 echo put your root password in to build and install
 su -c "./kde.SlackBuild $MODULE:$PROGNM"
