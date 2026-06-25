@@ -55,14 +55,17 @@ echo -e "\e[1;34m It's ok lets find the program name it is in \e[0m"
 sleep 2
 PROGNM=$prgname
 
+ALP=$(cat modules/all-packaged-applications | grep $PROGNM)
 APP=$(cat modules/applications | grep $PROGNM)
 APX=$(cat modules/applications-extra | grep $PROGNM)
 FRM=$(cat modules/frameworks | grep $PROGNM)
-KD4=$(cat modules/kde4 | grep $PROGNM)
+KD5=$(cat modules/kde5 | grep $PROGNM)
 PIM=$(cat modules/kdepim | grep $PROGNM)
 PLM=$(cat modules/plasma | grep $PROGNM)
 PLX=$(cat modules/plasma-extra | grep $PROGNM)
-TEL=$(cat modules/telepathy | grep $PROGNM)
+
+if [ "$ALP" = "$PROGNM" ]; then
+MODULE=all-packaged-applications
 if [ "$APP" = "$PROGNM" ]; then
 MODULE=applications
 fi
@@ -72,8 +75,8 @@ fi
 if [ "$FRM" = "$PROGNM" ]; then
 MODULE=frameworks
 fi
-if [ "$KD4" = "$PROGNM" ]; then
-MODULE=kde4
+if [ "$KD5" = "$PROGNM" ]; then
+MODULE=kde5
 fi
 if [ "$PIM" = "$PROGNM" ]; then
 MODULE=kdepim
@@ -83,9 +86,6 @@ MODULE=plasma
 fi
 if [ "$PLX" = "$PROGNM" ]; then
 MODULE=plasma-extra
-fi
-if [ "$TEL" = "$PROGNM" ]; then
-MODULE=telepathy
 fi
 echo put your proot password in to build and install
 su -c "./kde.SlackBuild $MODULE:$PROGNM"
